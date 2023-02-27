@@ -27,6 +27,28 @@ Por fim, serão apresentadas as conclusões sobre a eficácia da técnica de tra
 
 ### 2. Modelagem
 
+O trabalho foi criado em python usando a paltaforma de google colab. 
+
+Primeiramente, foi necessário preparar o conjunto de dados de amostras geológicas, provenientes do repositório de [*geological image similarity*](https://www.kaggle.com/datasets/tanyadayanand/geological-image-similarity) do kaggle para alimentar a rede neural.
+
+Usou-se uma utilidade de processamento de dados do keras chamada "*image_dataset_from_directory*". Esta ferramenta pega as imagens desde o diretório, as ordena por pastas (que representam classes), redimensiona as imagens. Tem como saida tensores com tamanhos de batch especificos prontos para fazer treinamento e validação.
+
+As 29998 imagens de amostras geológicas estão separadas em 6 classes, cada uma em sua propria pasta:
+
+*   Andesite 
+*   Gneiss 
+*   Marble 
+*   Quartzite 
+*   Rhyolite 
+*   Schist
+
+
+Em seguida, foi usada a ResNet50 pré-treinada como base da rede, removendo a camada de classificação final e adicionando uma nova camada de classificação personalizada para o conjunto de dados de amostras geológicas. Neste caso foi adicionada uma camada de 1024 neuronios Dense e uma camada de saida Danse de 6 neuronios representando cada uma uma classe de rocha. 
+
+Após a configuração da rede, é possível realizar o treinamento utilizando o conjunto de dados de amostras geológicas. Durante o treinamento, é importante monitorar as métricas de desempenho da rede, como acurácia e perda. Para isto foram usados os callbacks *EarlyStopping* e *ReduceLROnPlateau* para deneter o treinamento no momento de ter ganhos não significativos junto com o *ModelCheckpoint* que permite salvar o modelo com melhor eficiencia. 
+
+Finalmente foram criadas figuras para a avaliação do modelo.
+
 
 ### 3. Resultados
 
