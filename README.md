@@ -1,4 +1,4 @@
-# Classificação de imagens de amostras geológicas usando a técnica de transfer learning aplicada na resNet50.
+# Classificacao_de_Imagens_de_Amostras_Geologicas_Usando_a_Tecnica_de_Transfer_Learning_Aplicada_na_resNet50.
 
 #### Aluno: [Fredy Giovany Osorio Gutiérrez](https://github.com/fr3dyos).
 #### Orientador: [Leonardo Forero Mendonza](https://github.com/leofome8).
